@@ -13,6 +13,8 @@
 </template>
 
 <script>
+// TEST
+
 export default {
   name: "NavBar",
   props: {}
