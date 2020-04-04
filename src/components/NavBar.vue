@@ -2,7 +2,7 @@
   <div :class="[open ? 'navbar open' : 'navbar']">
     <div class="container">
       <div class="navbar-brand">
-        <img src="../assets/logo.png" class="navbar-brand-image" />
+        <img src="../assets/logo.png" class="navbar-brand-image">
       </div>
       <div class="navbar-burger">
         <font-awesome-icon
@@ -12,9 +12,12 @@
         />
       </div>
       <div :class="['navbar-nav', open ? 'navbar-nav-open' : '']">
-        <a class="navbar-nav-link" href="#">Calendario</a>
-        <a class="navbar-nav-link" href="#">Desafíos</a>
-        <a class="navbar-nav-link" href="#">Blog</a>
+        <a class="navbar-nav-link live" href="#">
+          <div class="navbar-nav-link-live"></div>En vivo
+        </a>
+        <a class="navbar-nav-soon" href="#">Calendario</a>
+        <a class="navbar-nav-soon" href="#">Desafíos</a>
+        <a class="navbar-nav-soon" href="#">Blog</a>
         <a class="navbar-nav-link" href="#">Contacto</a>
       </div>
     </div>
@@ -26,21 +29,24 @@ export default {
   name: "NavBar",
   data() {
     return {
-      open: false,
+      open: false
     };
   },
   methods: {
     toggleMobileMenu() {
       this.open = !this.open;
-    },
+    }
   },
-  mounted() {},
+  mounted() {}
 };
 </script>
 
 <style lang="sass" scoped>
 
 $vh: 100vh;
+
+.live
+  display: flex
 
 .navbar
   position: fixed
@@ -67,12 +73,25 @@ $vh: 100vh;
     display: flex
     align-items: center
 
+    &-soon
+        opacity: 0.4
+        margin-right: 2rem
+        color: #9EA0A2
+        font-size: 16px
+        -webkit-tap-highlight-color: transparent
+        transition: all 500ms ease
+
+        &:hover
+          color: #44AB6F
+          cursor: not-allowed
+
     &-link
       margin-right: 2rem
       color: #9EA0A2
       font-size: 16px
       -webkit-tap-highlight-color: transparent
       transition: all 500ms ease
+      
 
       &:hover
         color: #44AB6F
@@ -84,19 +103,7 @@ $vh: 100vh;
         height: 10px
         border-radius: 10px
         margin-right: 5px
-        animation: .3s ease-in-out both live;
-
-      &-soon
-        display: flex
-        justify-content: center
-        align-items: center
-        margin-left: 5px
-        font-size: 15px
-        width: 30px
-        height: 30px
-        border-radius: 15px
-        color: white
-        background: #44AB6F
+        animation: 1s ease-in-out infinite live;
 
 
 @media (max-width: 502px)
@@ -143,6 +150,4 @@ $vh: 100vh;
           color: white
         &:active
           opacity: 1
-        &-soon
-          opacity: 0.6
 </style>
