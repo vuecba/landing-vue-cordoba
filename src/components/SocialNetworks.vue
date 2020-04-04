@@ -45,6 +45,7 @@ export default {
     &:hover
       transform: scale(1.15)
       color: #44AB6F
+      cursor: pointer
 
   &-container
     display: block

@@ -24,9 +24,9 @@ export default {
     Presentation,
     // Challenges,
     Friends,
-    SocialNetworks
+    SocialNetworks,
     // VueEvents
-  }
+  },
 };
 </script>
 
@@ -63,4 +63,3 @@ a
   .container
     max-width: 90%
 </style>
-

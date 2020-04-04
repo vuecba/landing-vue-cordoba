@@ -1,5 +1,5 @@
 <template>
-  <div :class="[open ? 'navbar open': 'navbar']">
+  <div :class="[open ? 'navbar open' : 'navbar']">
     <div class="container">
       <div class="navbar-brand">
         <img src="../assets/logo.png" class="navbar-brand-image" />
@@ -11,7 +11,7 @@
           @click="toggleMobileMenu"
         />
       </div>
-      <div :class="['navbar-nav' , open ? 'navbar-nav-open': '']">
+      <div :class="['navbar-nav', open ? 'navbar-nav-open' : '']">
         <a class="navbar-nav-link" href="#">Calendario</a>
         <a class="navbar-nav-link" href="#">Desafíos</a>
         <a class="navbar-nav-link" href="#">Blog</a>
@@ -26,15 +26,15 @@ export default {
   name: "NavBar",
   data() {
     return {
-      open: false
+      open: false,
     };
   },
   methods: {
     toggleMobileMenu() {
       this.open = !this.open;
-    }
+    },
   },
-  mounted() {}
+  mounted() {},
 };
 </script>
 
@@ -73,10 +73,19 @@ $vh: 100vh;
       font-size: 16px
       -webkit-tap-highlight-color: transparent
       transition: all 500ms ease
-    
+
       &:hover
         color: #44AB6F
         cursor: pointer
+
+      &-live
+        background: red
+        width: 10px
+        height: 10px
+        border-radius: 10px
+        margin-right: 5px
+        animation: .3s ease-in-out both live;
+
       &-soon
         display: flex
         justify-content: center
@@ -136,8 +145,4 @@ $vh: 100vh;
           opacity: 1
         &-soon
           opacity: 0.6
-
 </style>
-
-
-
