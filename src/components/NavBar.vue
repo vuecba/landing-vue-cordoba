@@ -12,9 +12,9 @@
         />
       </div>
       <div :class="['navbar-nav', open ? 'navbar-nav-open' : '']">
-        <a class="navbar-nav-link live" target="_blank" href="https://www.twitch.tv/vuecba">
+        <!--<a class="navbar-nav-link live" target="_blank" href="https://www.twitch.tv/vuecba">
           <div class="navbar-nav-link-live"></div>En vivo
-        </a>
+        </a>-->
         <a class="navbar-nav-link" @click="closeMobileMenu('#amigos')">Amigos</a>
         <a class="navbar-nav-link" @click="closeMobileMenu('#redes')">Redes</a>
       </div>
