@@ -12,13 +12,11 @@
         />
       </div>
       <div :class="['navbar-nav', open ? 'navbar-nav-open' : '']">
-        <a class="navbar-nav-link live" href="#">
+        <a class="navbar-nav-link live" target="_blank" href="https://www.twitch.tv/vuecba">
           <div class="navbar-nav-link-live"></div>En vivo
         </a>
-        <a class="navbar-nav-soon" href="#">Calendario</a>
-        <a class="navbar-nav-soon" href="#">Desafíos</a>
-        <a class="navbar-nav-soon" href="#">Blog</a>
-        <a class="navbar-nav-link" href="#">Contacto</a>
+        <a class="navbar-nav-link" href="#amigos">Amigos</a>
+        <a class="navbar-nav-link" href="#redes">Redes</a>
       </div>
     </div>
   </div>
