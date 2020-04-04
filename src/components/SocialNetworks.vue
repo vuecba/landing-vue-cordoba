@@ -9,10 +9,10 @@
           </b>
         </h4>
         <div class="social-networks-icons">
-          <a href="https://codear.org/" target="_blank" class="icon">
+          <a href="https://twitter.com/vuecba" target="_blank" class="icon">
             <font-awesome-icon class="icon" :icon="{ prefix: 'fab', iconName: 'twitter' }"/>
           </a>
-          <a href="https://codear.org/" target="_blank" class="icon">
+          <a href="https://www.instagram.com/vuecba/" target="_blank" class="icon">
             <font-awesome-icon class="icon" :icon="{ prefix: 'fab', iconName: 'instagram' }"/>
           </a>
         </div>
