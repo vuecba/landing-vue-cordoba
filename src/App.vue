@@ -2,18 +2,30 @@
   <div id="app">
     <NavBar></NavBar>
     <Presentation></Presentation>
+    <!--<Challenges></Challenges>-->
+    <!--<VueEvents></VueEvents>-->
+    <Friends></Friends>
+    <SocialNetworks></SocialNetworks>
   </div>
 </template>
 
 <script>
 import NavBar from "./components/NavBar";
 import Presentation from "./components/Presentation";
+import Challenges from "./components/Challenges";
+import Friends from "./components/Friends";
+import SocialNetworks from "./components/SocialNetworks";
+import VueEvents from "./components/VueEvents";
 
 export default {
   name: "App",
   components: {
     NavBar,
-    Presentation
+    Presentation,
+    Challenges,
+    Friends,
+    SocialNetworks,
+    VueEvents
   }
 };
 </script>

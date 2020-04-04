@@ -2,14 +2,16 @@
   <div class="presentation">
     <img class="presentation-background" src="../assets/background.png" alt>
     <div class="presentation-text">
-      <p class="presentation-text-title">Aprendé en
-        <br>
-        <b class="presentation-text-highlight">cordooobé</b>
-      </p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa, nulla modi ut voluptas consequatur animi itaque ex.</p>
-      <div class="presentation-text-buttons">
-        <div class="button button-secondary">Desafíos</div>
-        <div class="button button-primary">Eventos</div>
+      <div class="presentation-text-container">
+        <p class="presentation-text-title">Aprendé en
+          <br>
+          <b class="presentation-text-highlight">cordooobé</b>
+        </p>
+        <p>Espacio de encuentros, charlas, workshops y mentorías entorno a #vuejs en Córdoba, AR.</p>
+        <div class="presentation-text-buttons">
+          <div class="button button-secondary">Desafíos</div>
+          <div class="button button-primary">Eventos</div>
+        </div>
       </div>
     </div>
     <img class="presentation-persons" src="../assets/persons.png">
@@ -24,22 +26,19 @@ export default {
 
 <style lang="sass" scoped>
 
+$vh: 100vh;
+
 .presentation
   position: relative
-  display:flex
-  margin-top: 100px
   width: 100%
+  display:flex
   justify-content: flex-start
+  align-items: center
   &-background
     width: 100%
     margin: 0
   &-text
     width: 30%
-    height: 300px
-    position: absolute
-    top: 50%
-    margin-top: -200px
-    left: 10%
     color: white
     font-size: 1rem
     &-title
@@ -57,7 +56,7 @@ export default {
     position: absolute
     right: 5%
     top: 50%
-    margin-top: -250px
+    margin-top: -200px
 
 .button
   width: 35%
@@ -81,6 +80,42 @@ export default {
     box-shadow: 0px 4px 10px -5px #ffffff
     &:hover
       cursor: pointer
+
+
+@media (max-width: 502px)
+
+  body
+    background: red
+
+  .presentation
+    width: 100%
+    height: $vh   
+    &-background
+      display: none
+    &-text
+      display: flex
+      align-items: center
+      background: #2B425A
+      width: 100%
+      height: 100%
+      left: 0
+      top: 0
+      padding: 10%
+      &-title
+        display: block
+        line-height: 2.5rem
+        font-size: 2.4rem
+      &-highlight
+        display: block
+        font-size: 3rem
+      &-buttons
+        display: block
+        margin-top: 25px
+        display: flex
+        justify-content: start-flex
+      
+    &-persons
+      display: none
 </style>
 
 
