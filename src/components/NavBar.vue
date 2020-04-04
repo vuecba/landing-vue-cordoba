@@ -11,6 +11,10 @@
       />
     </div>
     <div :class="['navbar-nav' , open ? 'navbar-nav-open': '']">
+      <div class="navbar-nav-link" href>
+        <div class="navbar-nav-link-live"/>
+        <span>En vivo</span>
+      </div>
       <div class="navbar-nav-link" href>Calendario</div>
       <div class="navbar-nav-link" href>Desafíos</div>
       <div class="navbar-nav-link" href>Blog</div>
@@ -82,6 +86,15 @@ $vh: 100vh;
       &:hover
         color: #44AB6F
         cursor: pointer
+
+      &-live
+        background: red
+        width: 10px
+        height: 10px
+        border-radius: 10px
+        margin-right: 5px
+        animation: .3s ease-in-out both live;
+
       &-soon
         display: flex
         justify-content: center
@@ -146,8 +159,11 @@ $vh: 100vh;
           color: #44AB6F
           background: white
 
-
-
+@keyframes live
+  0% 
+    background: red
+  100% 
+    background: grey
 </style>
 
 
