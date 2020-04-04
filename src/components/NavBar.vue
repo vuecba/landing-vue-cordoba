@@ -1,20 +1,22 @@
 <template>
-  <div class="navbar">
-    <div class="navbar-brand">
-      <img src="../assets/logo.png" class="navbar-brand-image">
-    </div>
-    <div class="navbar-burger">
-      <font-awesome-icon
-        :icon="open ? 'times' : 'bars'"
-        class="navbar-burger-icon"
-        @click="toggleMobileMenu"
-      />
-    </div>
-    <div :class="['navbar-nav' , open ? 'navbar-nav-open': '']">
-      <div class="navbar-nav-link" href>Calendario</div>
-      <div class="navbar-nav-link" href>Desafíos</div>
-      <div class="navbar-nav-link" href>Blog</div>
-      <div class="navbar-nav-link" href>Contacto</div>
+  <div :class="[open ? 'navbar open': 'navbar']">
+    <div class="container">
+      <div class="navbar-brand">
+        <img src="../assets/logo.png" class="navbar-brand-image" />
+      </div>
+      <div class="navbar-burger">
+        <font-awesome-icon
+          :icon="open ? 'times' : 'bars'"
+          class="navbar-burger-icon"
+          @click="toggleMobileMenu"
+        />
+      </div>
+      <div :class="['navbar-nav' , open ? 'navbar-nav-open': '']">
+        <a class="navbar-nav-link" href="#">Calendario</a>
+        <a class="navbar-nav-link" href="#">Desafíos</a>
+        <a class="navbar-nav-link" href="#">Blog</a>
+        <a class="navbar-nav-link" href="#">Contacto</a>
+      </div>
     </div>
   </div>
 </template>
@@ -42,42 +44,35 @@ $vh: 100vh;
 
 .navbar
   position: fixed
+  display: flex
+  align-items: center
   z-index: 1
   top: 0
+  left: 0
   background: rgba(248, 248, 248, 1)
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12)
   width: 100%
   height: 100px
-  display: flex
-  justify-content: space-between
-  &-brand
-    width: 25%
-    height: 100%
+  .container
     display: flex
-    align-items: center
-    justify-content: center
+    justify-content: space-between
+  &-brand
     &-image
-      max-height: 32px
-      margin: auto
+      width: 220px
 
   &-burger
     display: none
 
   &-nav
-    width: 35%
-    margin-right: 5%
-    height: 100%
     display: flex
-    justify-content: space-between
+    align-items: center
 
     &-link
-      width: auto
-      height: 100%
-      display: flex
-      justify-content: center
-      align-items: center
+      margin-right: 2rem
       color: #9EA0A2
-      font-size: 17px
+      font-size: 16px
+      -webkit-tap-highlight-color: transparent
+      transition: all 500ms ease
     
       &:hover
         color: #44AB6F
@@ -98,55 +93,49 @@ $vh: 100vh;
 @media (max-width: 502px)
   .navbar
     height: 75px
-    display: flex
-    justify-content: space-between
     &-brand
       &-image
-        margin-left: 15%
-        max-height: 25px
+        width: 160px
 
     &-burger
       display: flex
       justify-content: center
       align-items: center
-
       &-icon
-        /* margin-right: 15% */
-
+        font-size: 1.25rem
+        opacity: 0.6
     &-nav
       z-index: 0
-      display: block
+      display: flex
+      flex-direction: column
+      align-items: unset
       position: absolute
       width: 100%
       height: calc(#{$vh} - 75px)
-      right: -110%
+      left: 100%
+      top: 0
       margin-top: 75px
-      padding-top: 30px
-      background: rgba(68, 171, 111, .9)
-      transition: right .5s
+      padding: 2rem
+      background: rgba(68, 171, 111, .95)
+      transition: left .5s
+      text-align: right
       &-open
-        right: -5%
+        left: 0%
       &-link
         height: 60px
         margin-right: 15%
         justify-content: flex-end
         color: white
+        opacity: 0.7
+        font-size: 2rem
+        font-weight: 300
+        transition: all 300ms ease
         &:hover
           color: white
+        &:active
+          opacity: 1
         &-soon
-          position:relative
-          margin-left: 10px
-          display: flex
-          justify-content: center
-          align-items: center
-          font-size: 15px
-          width: 30px
-          height: 30px
-          border-radius: 15px
-          color: #44AB6F
-          background: white
-
-
+          opacity: 0.6
 
 </style>
 

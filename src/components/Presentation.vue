@@ -1,20 +1,23 @@
 <template>
   <div class="presentation">
-    <img class="presentation-background" src="../assets/background.png" alt>
-    <div class="presentation-text">
-      <div class="presentation-text-container">
-        <p class="presentation-text-title">Aprendé en
-          <br>
+    <img class="presentation-background" src="../assets/background.png" alt />
+    <img class="presentation-persons" src="../assets/persons.png" />
+    <div class="container h-100 p-relative">
+      <div class="presentation-text">
+        <h1 class="presentation-text-title">
+          Aprendé en
+          <br />
           <b class="presentation-text-highlight">cordooobé</b>
-        </p>
-        <p>Espacio de encuentros, charlas, workshops y mentorías entorno a #vuejs en Córdoba, AR.</p>
-        <div class="presentation-text-buttons">
-          <div class="button button-secondary">Desafíos</div>
-          <div class="button button-primary">Eventos</div>
+        </h1>
+        <h2
+          class="presentation-text-description"
+        >Espacio de encuentros, charlas, workshops y mentorías entorno a #vuejs en Córdoba, AR.</h2>
+        <div class="presentation-text-actions">
+          <button class="button button-secondary">Desafíos</button>
+          <button class="button button-primary">Eventos</button>
         </div>
       </div>
     </div>
-    <img class="presentation-persons" src="../assets/persons.png">
   </div>
 </template>
 
@@ -31,55 +34,74 @@ $vh: 100vh;
 .presentation
   position: relative
   width: 100%
-  display:flex
+  height: 100vh
+  display: flex
   justify-content: flex-start
   align-items: center
+  .container
+    display: flex
+    align-items: center
   &-background
     width: 100%
-    margin: 0
+    position: absolute
+    top: 0
+    left: 0
   &-text
-    width: 30%
+    width: 40%
+    height: min-content
     color: white
     font-size: 1rem
+    position: relative
+    left: 7%
     &-title
-      line-height: 2.5rem
-      font-size: 2.4rem
-    &-highlight
+      line-height: 3.25rem
       font-size: 3rem
-    &-buttons
-      margin-top: 25px
+      margin-bottom: 1.25rem
+      b
+        font-size: 4rem
+    &-description
+      font-size: 1.25rem
+      font-weight: 300
+      margin: 0
+    &-actions
       display: flex
-      justify-content: start-flex
+      margin-top: 3rem
+      .button
+        margin-right: 2rem
+        font-size: 1.125rem
+        letter-spacing: 0.25px
+        padding: 0.5rem 2rem
+        border-radius: 5px
+        transition: all 400ms ease
+        &:hover
+          cursor: pointer
+          transform: translateY(-0.25rem)
+        &:focus
+          outline: none
+        &:active
+          transform: translateY(-0.25rem) scale(1.05)
+        &-primary
+          background: #1ABB6D
+          color: #ffffff
+          border: 2px solid #3BEC96
+          box-shadow: 0px 11px 25px -12px #3BEC96, 0px 7px 15px -12px #3BEC96
+          &:active
+            box-shadow: 0px 22px 35px -14px #3BEC96, 0px 7px 15px -12px #3BEC96
+        &-secondary
+          background: #2B425A
+          color: #ffffff
+          border: 2px solid #ffffff
+          box-shadow: 0px 11px 25px -12px #477FB7, 0px 7px 15px -12px #477FB7
+          &:active
+            box-shadow: 0px 22px 35px -14px #477FB7, 0px 7px 15px -12px #477FB7
 
   &-persons
     max-height: 550px
     position: absolute
     right: 5%
     top: 50%
-    margin-top: -200px
+    transform: translateY(-35%)
 
-.button
-  width: 35%
-  height: 40px
-  margin-right: 5%
-  border-radius: 5px
-  display: flex
-  justify-content: center
-  align-items: center
-  &-primary
-    background:#1ABB6D
-    color: #ffffff
-    border: 1px solid #3BEC96
-    box-shadow: 0px 7px 10px -5px #3BEC96
-    &:hover
-      cursor: pointer
-  &-secondary
-    background:#2B425A
-    color: #ffffff
-    border: 1px solid #ffffff
-    box-shadow: 0px 4px 10px -5px #ffffff
-    &:hover
-      cursor: pointer
 
 
 @media (max-width: 502px)
@@ -88,32 +110,17 @@ $vh: 100vh;
     background: red
 
   .presentation
-    width: 100%
-    height: $vh   
+    background: url('../assets/mobile-background.jpg')
     &-background
       display: none
     &-text
-      display: flex
-      align-items: center
-      background: #2B425A
       width: 100%
-      height: 100%
       left: 0
-      top: 0
-      padding: 10%
-      &-title
-        display: block
-        line-height: 2.5rem
-        font-size: 2.4rem
-      &-highlight
-        display: block
-        font-size: 3rem
-      &-buttons
-        display: block
-        margin-top: 25px
-        display: flex
-        justify-content: start-flex
-      
+      text-align: center
+      &-actions
+        justify-content: space-around
+        .button
+          margin: 0
     &-persons
       display: none
 </style>
