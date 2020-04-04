@@ -23,12 +23,12 @@ export default {
   justify-content: center
   height: 100vh
   &-text
-    width: 50%
+    width: 100%
     font-size: 5rem
     padding: 10%
   &-logos
     font-size: 5rem
-    width: 50%
+    width: 100%
     &-image
       max-width: 50%
 

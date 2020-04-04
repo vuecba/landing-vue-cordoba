@@ -12,20 +12,20 @@
 <script>
 import NavBar from "./components/NavBar";
 import Presentation from "./components/Presentation";
-import Challenges from "./components/Challenges";
+//import Challenges from "./components/Challenges";
 import Friends from "./components/Friends";
 import SocialNetworks from "./components/SocialNetworks";
-import VueEvents from "./components/VueEvents";
+//import VueEvents from "./components/VueEvents";
 
 export default {
   name: "App",
   components: {
     NavBar,
     Presentation,
-    Challenges,
+    //Challenges,
     Friends,
     SocialNetworks,
-    VueEvents
+    //VueEvents
   }
 };
 </script>
