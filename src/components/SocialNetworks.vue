@@ -2,19 +2,19 @@
   <div class="social-networks" id="redes">
     <div class="container">
       <div class="social-networks-content">
-        <h4>
-          Las redes que están<br />
-          <b><span class="green--text">VUEEE</span>-NAZAS!</b>
+        <h4>Las redes que están
+          <br>
+          <b>
+            <span class="green--text">VUEEE</span>-NAZAS!
+          </b>
         </h4>
         <div class="social-networks-icons">
-          <font-awesome-icon
-            class="icon"
-            :icon="{ prefix: 'fab', iconName: 'twitter' }"
-          />
-          <font-awesome-icon
-            class="icon"
-            :icon="{ prefix: 'fab', iconName: 'instagram' }"
-          />
+          <a href="https://codear.org/" target="_blank" class="icon">
+            <font-awesome-icon class="icon" :icon="{ prefix: 'fab', iconName: 'twitter' }"/>
+          </a>
+          <a href="https://codear.org/" target="_blank" class="icon">
+            <font-awesome-icon class="icon" :icon="{ prefix: 'fab', iconName: 'instagram' }"/>
+          </a>
         </div>
       </div>
     </div>
@@ -23,7 +23,7 @@
 
 <script>
 export default {
-  name: "SocialNetworks",
+  name: "SocialNetworks"
 };
 </script>
 
@@ -46,6 +46,7 @@ export default {
     display: flex
     justify-content: center
     .icon
+      color: #474747
       font-size: 5rem
       transition: all .5s ease
       transform: scale(1)

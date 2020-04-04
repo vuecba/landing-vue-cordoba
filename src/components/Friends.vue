@@ -1,13 +1,17 @@
 <template>
   <div class="friends" id="amigos">
     <div class="container">
-      <h3 class="friends-text">Nuestros <b>amigos</b></h3>
+      <h3 class="friends-text">
+        Nuestros
+        <b>amigos</b>
+      </h3>
       <div class="friends-logos">
-        <img class="friends-logos-image" src="../assets/codear.png" />
-        <img
-          class="friends-logos-image optical-correction"
-          src="../assets/vuemastery.png"
-        />
+        <a href="https://codear.org/" target="_blank">
+          <img class="friends-logos-image" src="../assets/codear.png">
+        </a>
+        <a href="https://www.vuemastery.com/" target="_blank">
+          <img class="friends-logos-image optical-correction" src="../assets/vuemastery.png">
+        </a>
       </div>
     </div>
   </div>
@@ -15,7 +19,7 @@
 
 <script>
 export default {
-  name: "Friends",
+  name: "Friends"
 };
 </script>
 

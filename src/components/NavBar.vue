@@ -15,8 +15,8 @@
         <a class="navbar-nav-link live" target="_blank" href="https://www.twitch.tv/vuecba">
           <div class="navbar-nav-link-live"></div>En vivo
         </a>
-        <a class="navbar-nav-link" href="#amigos">Amigos</a>
-        <a class="navbar-nav-link" href="#redes">Redes</a>
+        <a class="navbar-nav-link" @click="closeMobileMenu('#amigos')">Amigos</a>
+        <a class="navbar-nav-link" @click="closeMobileMenu('#redes')">Redes</a>
       </div>
     </div>
   </div>
@@ -33,6 +33,10 @@ export default {
   methods: {
     toggleMobileMenu() {
       this.open = !this.open;
+    },
+    closeMobileMenu(link) {
+      this.open = false;
+      window.location.href = link;
     }
   },
   mounted() {}
