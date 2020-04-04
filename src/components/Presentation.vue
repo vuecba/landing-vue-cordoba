@@ -9,12 +9,22 @@
           <br />
           <b class="presentation-text-highlight">cordooobé</b>
         </h1>
-        <h2
-          class="presentation-text-description"
-        >Espacio de encuentros, charlas, workshops y mentorías entorno a #vuejs en Córdoba, AR.</h2>
+        <h2 class="presentation-text-description">
+          Espacio de encuentros, charlas, workshops y mentorías entorno a #vuejs
+          en Córdoba, AR.
+        </h2>
         <div class="presentation-text-actions">
-          <button class="button button-secondary">Desafíos</button>
-          <button class="button button-primary">Eventos</button>
+          <template v-if="!clicked">
+            <button class="button button-secondary" @click="clicked = !clicked">
+              Desafíos
+            </button>
+            <button class="button button-primary" @click="clicked = !clicked">
+              Eventos
+            </button>
+          </template>
+          <template v-else>
+            <h2>🚀 Próximamente!</h2>
+          </template>
         </div>
       </div>
     </div>
@@ -23,7 +33,12 @@
 
 <script>
 export default {
-  name: "Presentation"
+  name: "Presentation",
+  data() {
+    return {
+      clicked: false,
+    };
+  },
 };
 </script>
 
@@ -66,6 +81,8 @@ $vh: 100vh;
     &-actions
       display: flex
       margin-top: 3rem
+      h2
+        letter-spacing: 1px
       .button
         margin-right: 2rem
         font-size: 1.125rem
@@ -110,7 +127,9 @@ $vh: 100vh;
     background: red
 
   .presentation
-    background: url('../assets/mobile-background.jpg')
+    background-image: url('../assets/mobile-background.jpg')
+    background-repeat: no-repeat
+    background-size: cover
     &-background
       display: none
     &-text
@@ -124,5 +143,3 @@ $vh: 100vh;
     &-persons
       display: none
 </style>
-
-
