@@ -7,7 +7,7 @@ import {
   faCogs,
   faVideo
 } from "@fortawesome/free-solid-svg-icons";
-import { faInstagram, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faInstagram, faTwitter, faGithub, faDiscord } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 library.add(faBars);
@@ -16,6 +16,8 @@ library.add(faCogs);
 library.add(faInstagram);
 library.add(faTwitter);
 library.add(faVideo);
+library.add(faGithub);
+library.add(faDiscord);
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 

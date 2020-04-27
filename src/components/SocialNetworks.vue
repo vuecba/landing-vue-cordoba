@@ -15,6 +15,12 @@
           <a href="https://www.instagram.com/vuecba/" target="_blank" class="icon">
             <font-awesome-icon class="icon" :icon="{ prefix: 'fab', iconName: 'instagram' }"/>
           </a>
+          <a href="https://github.com/Vue-Cba/vuecba" target="_blank" class="icon">
+            <font-awesome-icon class="icon" :icon="{ prefix: 'fab', iconName: 'github' }"/>
+          </a>
+          <a href="https://discord.gg/gtW7A5r" target="_blank" class="icon">
+            <font-awesome-icon class="icon" :icon="{ prefix: 'fab', iconName: 'discord' }"/>
+          </a>
         </div>
       </div>
     </div>
@@ -47,7 +53,7 @@ export default {
     justify-content: center
     .icon
       color: #474747
-      font-size: 5rem
+      font-size: 4rem
       transition: all .5s ease
       transform: scale(1)
       margin: 0 4rem
