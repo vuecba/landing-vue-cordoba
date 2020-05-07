@@ -17,7 +17,6 @@
         </a>-->
         <a class="navbar-nav-link" @click="closeMobileMenu('#amigos')">Amigos</a>
         <a class="navbar-nav-link" @click="closeMobileMenu('#redes')">Redes</a>
-        <a class="navbar-nav-link" @click="closeMobileMenu('https://geekscononda.com/coleccion/vue-cordoba')">Merchandising</a>
       </div>
     </div>
   </div>
