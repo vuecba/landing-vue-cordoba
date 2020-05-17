@@ -1,22 +1,23 @@
 <template>
-  <div :class="[open ? 'navbar open' : 'navbar']">
+  <div :class="[openMenu ? 'navbar open' : 'navbar']">
     <div class="container">
-      <div class="navbar-brand">
+      <div class="navbar-brand" @click="closeMobileMenu('#')">
         <img src="../assets/logo.png" class="navbar-brand-image">
       </div>
       <div class="navbar-burger">
         <font-awesome-icon
-          :icon="open ? 'times' : 'bars'"
+          :icon="openMenu ? 'times' : 'bars'"
           class="navbar-burger-icon"
           @click="toggleMobileMenu"
         />
       </div>
-      <div :class="['navbar-nav', open ? 'navbar-nav-open' : '']">
+      <div :class="['navbar-nav', openMenu ? 'navbar-nav-open' : '']">
         <!--<a class="navbar-nav-link live" target="_blank" href="https://www.twitch.tv/vuecba">
           <div class="navbar-nav-link-live"></div>En vivo
         </a>-->
         <a class="navbar-nav-link" @click="closeMobileMenu('#amigos')">Amigos</a>
         <a class="navbar-nav-link" @click="closeMobileMenu('#redes')">Redes</a>
+        <a class="navbar-nav-link" @click="closeMobileMenu('#merchandising')">Merchandising</a>
       </div>
     </div>
   </div>
@@ -25,27 +26,24 @@
 <script>
 export default {
   name: "NavBar",
-  data() {
-    return {
-      open: false
-    };
+  props:{
+    openMenu:Boolean,
   },
   methods: {
     toggleMobileMenu() {
-      this.open = !this.open;
+      this.$emit('update:openMenu',!this.openMenu)
     },
     closeMobileMenu(link) {
-      this.open = false;
+      this.$emit('update:openMenu',false)
       window.location.href = link;
     }
   },
-  mounted() {}
 };
 </script>
 
 <style lang="sass" scoped>
 
-$vh: 100vh;
+$vh: 100vh
 
 .live
   display: flex
@@ -54,7 +52,7 @@ $vh: 100vh;
   position: fixed
   display: flex
   align-items: center
-  z-index: 1
+  z-index: 20
   top: 0
   left: 0
   background: rgba(248, 248, 248, 1)
@@ -65,6 +63,7 @@ $vh: 100vh;
     display: flex
     justify-content: space-between
   &-brand
+    cursor: pointer
     &-image
       width: 220px
 
