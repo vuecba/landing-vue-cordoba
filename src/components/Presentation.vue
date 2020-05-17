@@ -1,6 +1,5 @@
 <template>
   <div class="presentation">
-    <img class="presentation-background" src="../assets/background.png" alt />
     <img class="presentation-persons" src="../assets/persons.png" />
     <div class="container h-100 p-relative">
       <div class="presentation-text">
@@ -44,7 +43,7 @@ export default {
 
 <style lang="sass" scoped>
 
-$vh: 100vh;
+$vh: 100vh
 
 .presentation
   position: relative
@@ -53,6 +52,10 @@ $vh: 100vh;
   display: flex
   justify-content: flex-start
   align-items: center
+  background-image: url('../assets/background.png')
+  background-position: center bottom
+  background-size: cover
+  //background-color: #2b465e
   .container
     display: flex
     align-items: center
@@ -61,6 +64,8 @@ $vh: 100vh;
     position: absolute
     top: 0
     left: 0
+    height: 100vh
+    object-fit: cover
   &-text
     width: 40%
     height: min-content
@@ -83,34 +88,6 @@ $vh: 100vh;
       margin-top: 3rem
       h2
         letter-spacing: 1px
-      .button
-        margin-right: 2rem
-        font-size: 1.125rem
-        letter-spacing: 0.25px
-        padding: 0.5rem 2rem
-        border-radius: 5px
-        transition: all 400ms ease
-        &:hover
-          cursor: pointer
-          transform: translateY(-0.25rem)
-        &:focus
-          outline: none
-        &:active
-          transform: translateY(-0.25rem) scale(1.05)
-        &-primary
-          background: #1ABB6D
-          color: #ffffff
-          border: 2px solid #3BEC96
-          box-shadow: 0px 11px 25px -12px #3BEC96, 0px 7px 15px -12px #3BEC96
-          &:active
-            box-shadow: 0px 22px 35px -14px #3BEC96, 0px 7px 15px -12px #3BEC96
-        &-secondary
-          background: #2B425A
-          color: #ffffff
-          border: 2px solid #ffffff
-          box-shadow: 0px 11px 25px -12px #477FB7, 0px 7px 15px -12px #477FB7
-          &:active
-            box-shadow: 0px 22px 35px -14px #477FB7, 0px 7px 15px -12px #477FB7
 
   &-persons
     max-height: 550px

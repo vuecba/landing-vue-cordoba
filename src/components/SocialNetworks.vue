@@ -12,6 +12,9 @@
           <a href="https://twitter.com/vuecba" target="_blank" class="icon">
             <font-awesome-icon class="icon" :icon="{ prefix: 'fab', iconName: 'twitter' }"/>
           </a>
+          <a href="https://tinyurl.com/vue-cba" target="_blank" class="icon">
+            <font-awesome-icon class="icon" :icon="{ prefix: 'fab', iconName: 'youtube' }"/>
+          </a>
           <a href="https://www.instagram.com/vuecba/" target="_blank" class="icon">
             <font-awesome-icon class="icon" :icon="{ prefix: 'fab', iconName: 'instagram' }"/>
           </a>
@@ -23,7 +26,12 @@
 
 <script>
 export default {
-  name: "SocialNetworks"
+  name: "SocialNetworks",
+  data(){
+    return{
+      text: 'tap me!'
+    }
+  }
 };
 </script>
 
@@ -67,7 +75,7 @@ export default {
       h4
         font-size: 2rem
     &-icons
-      font-size: 4rem
+      font-size: 1rem
       .icon
-        margin: 0 2rem
+        margin: 0 .5rem
 </style>
