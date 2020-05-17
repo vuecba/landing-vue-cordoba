@@ -57,6 +57,7 @@ export default {
   name: "Merchandising",
   components:{
       Polaroid
+      
   }
 };
 </script> 
