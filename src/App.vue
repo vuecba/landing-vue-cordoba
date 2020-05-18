@@ -59,7 +59,7 @@ a
 
 #app
   margin: 0
-  z-index: 100
+  z-index: 15
 
 .container
   max-width: 1180px

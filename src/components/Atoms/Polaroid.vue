@@ -1,5 +1,10 @@
 <template>
-  <div :class="[ $isMobile()?'item-mobile':'item', `r-${adjustDirection}-${adjustValues(rotation)}`]">
+  <div 
+    @mouseover="()=>selected=!$isMobile()" 
+    @mouseleave="()=>selected=false" 
+    v-touch:tap="()=>selected=!selected"
+    :class="['item', selected ? 'selected': '', `r-${adjustDirection}-${adjustValues(rotation)}`]"
+    >
     <div class="polaroid">
         <img :src="image">
         <div class="caption">{{text}}</div>
@@ -19,6 +24,7 @@ export default {
     data(){
       return {
         supportedDirections:['l','r'],
+        selected: false,
         rotationValues: {
           max: 9,
           min: 0,
@@ -69,9 +75,9 @@ export default {
   
   &:hover
     filter: none
-    transform: scale(1, 1) rotate(0deg) !important
     transition: all 0.35s
-
+  &.selected
+    transform: scale(1, 1) rotate(0deg) !important
 
 // TODO:(FECO) -> Preguntar a Franquito
 .item.r-l
@@ -113,7 +119,10 @@ export default {
     font-size: 1rem
     text-align: center
     line-height: 1em
-  
+  .item
+    &:hover
+      filter: grayscale(50%)
+
 
 
 </style>

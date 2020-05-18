@@ -15,9 +15,9 @@
         <!--<a class="navbar-nav-link live" target="_blank" href="https://www.twitch.tv/vuecba">
           <div class="navbar-nav-link-live"></div>En vivo
         </a>-->
+        <a class="navbar-nav-link" @click="closeMobileMenu('#merchandising')">Merchandising</a>
         <a class="navbar-nav-link" @click="closeMobileMenu('#amigos')">Amigos</a>
         <a class="navbar-nav-link" @click="closeMobileMenu('#redes')">Redes</a>
-        <a class="navbar-nav-link" @click="closeMobileMenu('#merchandising')">Merchandising</a>
       </div>
     </div>
   </div>
@@ -104,7 +104,7 @@ $vh: 100vh
         height: 10px
         border-radius: 10px
         margin-right: 5px
-        animation: 1s ease-in-out infinite live;
+        animation: 1s ease-in-out infinite live
 
 
 @media (max-width: 502px)

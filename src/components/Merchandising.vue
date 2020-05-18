@@ -1,13 +1,14 @@
 <template>
   <div class="merchandising">
     <div class="container d-flex">
-        <div class="merchandising-polaroids">
+        <div class="merchandising-polaroids" v-touch:swipe.right="()=>changeImageOrder()">
+            <span v-if="$isMobile()" :class="['green', helps.swipe? '':'hide']">Swipe ↪</span>
             <Polaroid
               text="T-shirt 👓"
               :image="require('../assets/polaroids/remera-negra.png')"
               direction="l"
               :rotation="3"
-              class="image-first"
+              :class="orderClasses[0]"
             >
             </Polaroid>            
             <Polaroid
@@ -15,7 +16,7 @@
               :image="require('../assets/polaroids/friends.png')"
               direction="r"
               :rotation="3"
-              class="image-third"
+              :class="orderClasses[2]"
             >
             </Polaroid>
             <Polaroid
@@ -23,7 +24,7 @@
               :image="require('../assets/polaroids/buzo-gris.png')"
               direction="r"
               :rotation="1"
-              class="image-second"
+              :class="orderClasses[1]"
             >
             </Polaroid>
         </div>
@@ -43,7 +44,7 @@
               } <b class="green">from</b> 'VueCba'
             </template>
           </span>
-          <button class="button button-primary" @click="clicked = !clicked">
+          <button class="button button-primary" @click="goTo('https://geekscononda.com/coleccion/vue-cordoba','_blank')">
             Ver más
           </button>
         </div>
@@ -57,7 +58,24 @@ export default {
   name: "Merchandising",
   components:{
       Polaroid
-      
+  },
+  data(){
+    return{
+      orderClasses: ['image-first','image-second','image-third'],
+      helps:{
+        swipe: true,
+      }
+    } 
+  },
+  methods:{
+    goTo(link,target){
+      window.open(link,target);
+    },
+    changeImageOrder(){
+      this.orderClasses.unshift(this.orderClasses[this.orderClasses.length-1]);
+      this.orderClasses.splice(-1,1);
+      this.helps.swipe = false;
+    },
   }
 };
 </script> 
@@ -89,7 +107,7 @@ export default {
       margin-top: 2rem
       width: 90%
       background: #1ABB6D
-      z-index: 15
+      z-index: 10
 
   &-polaroids
     width: 50%
@@ -97,6 +115,17 @@ export default {
     width: 90%
     margin: 0 auto
     display: flex
+    z-index: 19
+    span 
+      font-size: 1.1rem
+      position: absolute
+      top: 20%
+      width: 90%
+      animation: .5s swipe infinite alternate ease-out
+      transition: all 1s
+      opacity: 1
+      &.hide
+        opacity: 0
   &-polaroids .image
     &-first
       position: absolute
@@ -105,7 +134,7 @@ export default {
       top: 0
       left: 1%
       z-index: 1
-      &:hover 
+      &.hover 
         z-index: 10
     &-second
       position: absolute
@@ -114,7 +143,7 @@ export default {
       left: 15%
 
       z-index: 3
-      &:hover 
+      &.hover 
         z-index: 10
     &-third
       position: absolute
@@ -126,6 +155,13 @@ export default {
       &:hover 
         z-index: 10
 
+
+@keyframes swipe
+  0%
+    margin-left: 0
+  100%
+    margin-left: 10px
+
 @media (max-width: 502px)
   .merchandising
     flex-direction: column
@@ -136,19 +172,25 @@ export default {
           left: 50%
           margin-left: -45%
           z-index: 2
-          top: 20%
+          top: 22%
+          &:hover
+            z-index: none
         &-second
           width: 90%
           left: 50%
           margin-left: -45%
-          top: 20%
+          top: 22%
           z-index: 3
+          &:hover
+            z-index: none
         &-third
           z-index: 1
           width: 90%
           left: 50%
           margin-left: -45%
-          top: 20%
+          top: 22%
+          &:hover
+            z-index: none
     &-text
       width: 100%
       span
