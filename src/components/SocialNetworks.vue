@@ -62,7 +62,7 @@ export default {
       font-size: 5rem
       transition: all .5s ease
       transform: scale(1)
-      margin: 0 4rem
+      margin: 0.3rem 4rem
       &:hover
         transform: scale(1.15)
         color: #44AB6F
