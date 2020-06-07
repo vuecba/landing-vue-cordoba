@@ -18,6 +18,9 @@
           <a href="https://www.instagram.com/vuecba/" target="_blank" class="icon">
             <font-awesome-icon class="icon" :icon="{ prefix: 'fab', iconName: 'instagram' }"/>
           </a>
+          <a href="https://www.twitch.tv/vuecba" target="_blank" class="icon">
+            <font-awesome-icon class="icon" :icon="{ prefix: 'fab', iconName: 'twitch' }"/>
+          </a>
         </div>
       </div>
     </div>
@@ -52,6 +55,7 @@ export default {
       margin-top: 0
   &-icons
     display: flex
+    flex-wrap: wrap
     justify-content: center
     .icon
       color: #474747
