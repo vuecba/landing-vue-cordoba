@@ -7,7 +7,7 @@ import {
   faCogs,
   faVideo
 } from "@fortawesome/free-solid-svg-icons";
-import { faInstagram, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import { faInstagram, faTwitter, faYoutube, faTwitch } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import VueMobileDetection from 'vue-mobile-detection'
 import Vue2TouchEvents from 'vue2-touch-events'
@@ -19,6 +19,7 @@ library.add(faInstagram);
 library.add(faTwitter);
 library.add(faVideo);
 library.add(faYoutube);
+library.add(faTwitch);
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 Vue.use(VueMobileDetection)
