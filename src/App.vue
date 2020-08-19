@@ -4,7 +4,7 @@
     <Presentation></Presentation>
     <!--<Challenges></Challenges>-->
     <!--<VueEvents></VueEvents>-->
-    <Merchandising id="merchandising"></Merchandising>
+    <!--<Merchandising id="merchandising"></Merchandising>-->
     <Friends></Friends>
     <SocialNetworks></SocialNetworks>
   </div>
@@ -16,7 +16,7 @@ import Presentation from "./components/Presentation";
 // import Challenges from "./components/Challenges";
 import Friends from "./components/Friends";
 import SocialNetworks from "./components/SocialNetworks";
-import Merchandising from "./components/Merchandising"
+// import Merchandising from "./components/Merchandising"
 // import VueEvents from "./components/VueEvents";
 
 export default {
@@ -25,7 +25,7 @@ export default {
     NavBar,
     Presentation,
     // Challenges,
-    Merchandising,
+    //Merchandising,
     Friends,
     SocialNetworks,
     // VueEvents
